@@ -187,7 +187,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Team - Services</title>
+  <title>Company Landing Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
@@ -213,31 +213,15 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      padding: 0;
       transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--primary);
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: var(--text);
-      max-width: 600px;
-      margin: 1rem auto 0;
+      line-height: 1.6;
     }
 
     nav {
@@ -271,12 +255,8 @@
       transition: color 0.3s;
     }
 
-    nav ul li a.active {
-      color: var(--secondary);
-    }
-
     nav ul li a:hover {
-      color: var(--hover);
+      color: var(--secondary);
     }
 
     .toggle-mode {
@@ -287,140 +267,276 @@
       color: var(--text);
     }
 
-    .team-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .team-card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Hero */
+    .hero {
       text-align: center;
-      transition: transform 0.3s ease, background 0.3s, color 0.3s;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
     }
 
-    .team-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .team-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
+    .hero h1 {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
-    .team-card h3 {
-      font-size: 1.2rem;
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    .hero .btn {
+      background: white;
+      color: var(--primary);
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: var(--hover);
+      color: white;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
       color: var(--primary);
     }
 
-    .team-card p.role {
-      font-size: 0.95rem;
-      color: #888;
-      margin-bottom: 0.5rem;
+    p.section-desc {
+      max-width: 600px;
+      margin: 0 auto 3rem;
     }
 
-    .team-card .bio {
-      font-size: 0.9rem;
-      color: var(--text);
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature i {
+      font-size: 2rem;
+      color: var(--secondary);
       margin-bottom: 1rem;
     }
 
-    .social-icons a {
-      margin: 0 0.4rem;
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      font-style: italic;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .testimonial h4 {
+      margin-top: 1rem;
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--secondary);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .cta .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: white;
       color: var(--secondary);
-      font-size: 1.2rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
       text-decoration: none;
-      transition: color 0.3s;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .social-icons a:hover {
-      color: var(--hover);
+    .cta .btn:hover {
+      background: var(--hover);
+      color: white;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
 
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-form button {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: var(--hover);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card);
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
     <div class="logo">MyCompany</div>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#" class="active">Services</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="toggle-mode" onclick="toggleDarkMode()">🌓</button>
   </nav>
 
-  <header>
-    <h1>Meet Our Team</h1>
-    <p>We are a group of passionate professionals committed to excellence and innovation in everything we do.</p>
-  </header>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <h1>Welcome to Our Company</h1>
+    <p>We build innovative solutions that empower businesses and individuals worldwide.</p>
+    <a href="#features" class="btn">Get Started</a>
+  </section>
 
-  <section class="team-container">
-    <div class="team-card">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
-      <h3>John Doe</h3>
-      <p class="role">Frontend Developer</p>
-      <p class="bio">Loves building user-friendly web interfaces with React and modern JavaScript.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+  <!-- Features -->
+  <section id="features">
+    <h2>Our Features</h2>
+    <p class="section-desc">We provide world-class services with cutting-edge technology to help your business grow.</p>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-bolt"></i>
+        <h3>Fast Performance</h3>
+        <p>Optimized systems that run lightning-fast and save you time.</p>
       </div>
-    </div>
-
-    <div class="team-card">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith">
-      <h3>Jane Smith</h3>
-      <p class="role">UI/UX Designer</p>
-      <p class="bio">Designs intuitive and beautiful user experiences that delight customers.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-dribbble"></i></a>
+      <div class="feature">
+        <i class="fas fa-lock"></i>
+        <h3>Secure Systems</h3>
+        <p>Top-notch security to keep your data safe at all times.</p>
       </div>
-    </div>
-
-    <div class="team-card">
-      <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen">
-      <h3>Michael Chen</h3>
-      <p class="role">Project Manager</p>
-      <p class="bio">Keeps the team organized and ensures timely delivery of quality work.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sara Khan">
-      <h3>Sara Khan</h3>
-      <p class="role">Backend Developer</p>
-      <p class="bio">Passionate about APIs, databases, and scalable backend systems.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>Our team is always available to assist you whenever you need.</p>
       </div>
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        "This company transformed our business. Their solutions are innovative and reliable."
+        <h4>- Alex Johnson</h4>
+      </div>
+      <div class="testimonial">
+        "Amazing customer support and great results. Highly recommended!"
+        <h4>- Maria Lopez</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Start?</h2>
+    <p>Join thousands of happy clients who trust us with their business.</p>
+    <a href="#contact" class="btn">Contact Us</a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p class="section-desc">We’d love to hear from you. Fill out the form below and we’ll get back to you soon.</p>
+    <form class="contact-form" onsubmit="return submitForm(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MyCompany. All rights reserved.</p>
+  </footer>
+
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark');
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you for contacting us! We'll get back to you shortly.");
+      event.target.reset();
+      return false;
     }
   </script>
 </body>
